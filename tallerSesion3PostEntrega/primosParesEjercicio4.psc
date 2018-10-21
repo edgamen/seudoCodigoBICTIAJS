@@ -1,7 +1,7 @@
 Algoritmo primosPares
 	//Creado por Edgardo Mendez Lara para BICTIA Bootcamp JS
 	Definir numEntrada Como Entero;
-	Definir estadoPrimo Como Entero;
+	Definir estadoPrimo Como Logico;
 	Definir estadoPar Como Entero;
 	Escribir "Por favor ingrese un numero para verificar si es par o impar y si es primo: ";
 	Leer numEntrada;
@@ -13,18 +13,24 @@ Algoritmo primosPares
 		Si estadoPar=0 Entonces
 			Escribir "El numero ingresado es PAR.";
 		SiNo
-			verPrimo= RAIZ(numEntrada);
+			verPrimo= RAIZ(numEntrada);//Saca raiz cuadradada para abreviar el calculo
 			
-			verPrimo1= TRUNC(verPrimo);
+			verPrimo1= TRUNC(verPrimo);//Sacamos la parte entera de la raiz encontrada
 			
-			Para i<-3 hasta verPrimo1 con paso 2 Hacer // ya sabemos que es impar
-				Si numEntrada MOD i != 0 entonces // si la division da exacta...
-					Escribir "El numero ingresado es PRIMO.";
-					Escribir "El numero ingresado es IMPAR.";
+			Para i<-3 hasta verPrimo1 con paso 2 Hacer // ya sabemos que es impar e incrementamos para encontrar los primos
+				Si numEntrada MOD i != 0 entonces 
+					estadoPrimo=Verdadero;
+					
 					
 				FinSi
 			FinPara
-			
+			si estadoPrimo=Verdadero Entonces
+				Escribir "El numero ingresado es PRIMO.";
+				Escribir "El numero ingresado es IMPAR.";
+			SiNo
+				Escribir "El numero ingresado NO es PRIMO.";
+				Escribir "El numero ingresado es IMPAR.";
+			FinSi
 			
 			
 		FinSi

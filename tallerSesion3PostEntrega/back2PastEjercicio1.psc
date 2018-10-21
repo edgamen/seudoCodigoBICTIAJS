@@ -20,6 +20,6 @@ Algoritmo temporizadorHaciaAtras
 			Esperar 1 Segundos;
 			Escribir "00:00:0",crono;	
 		FinPara
-		
+		Esperar 1 Segundos;
 		Escribir "Bienvenidos a BICTIA!!";
 FinAlgoritmo
